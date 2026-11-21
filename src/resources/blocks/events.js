@@ -71,7 +71,7 @@ function register() {
     }, (block) => {
         const NAME = javascriptGenerator.valueToCode(block, 'NAME');
         const BLOCKS = javascriptGenerator.statementToCode(block, 'BLOCKS');
-        const code = `ExtForge.Broadcasts.register(${NAME}, (async () => { ${BLOCKS} })());`;
+        const code = `PotentiaBuilder.Broadcasts.register(${NAME}, (async () => { ${BLOCKS} })());`;
         return `${code}\n`;
     })
 
@@ -92,7 +92,7 @@ function register() {
         colour: categoryColor
     }, (block) => {
         const NAME = javascriptGenerator.valueToCode(block, 'NAME');
-        const code = `ExtForge.Broadcasts.execute(${NAME});`;
+        const code = `PotentiaBuilder.Broadcasts.execute(${NAME});`;
         return `${code}\n`;
     })
 
@@ -113,7 +113,7 @@ function register() {
         colour: categoryColor
     }, (block) => {
         const NAME = javascriptGenerator.valueToCode(block, 'NAME');
-        const code = `await ExtForge.Broadcasts.execute(${NAME});`;
+        const code = `await PotentiaBuilder.Broadcasts.execute(${NAME});`;
         return `${code}\n`;
     })
 }
