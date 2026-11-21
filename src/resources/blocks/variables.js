@@ -27,7 +27,7 @@ function register() {
         extensions: [`${categoryPrefix}get_extension`]
     }, (block) => {
         const NAME = block.getFieldValue("NAME")
-        const code = `ExtForge.Variables.get("${NAME}")`;
+        const code = `PotentiaBuilder.Variables.get("${NAME}")`;
         return `${code}\n`;
     })
 
@@ -52,7 +52,7 @@ function register() {
     }, (block) => {
         const NAME = block.getFieldValue("NAME")
         const INPUT = javascriptGenerator.valueToCode(block, "INPUT") || "null"
-        const code = `ExtForge.Variables.set("${NAME}", ${INPUT})`;
+        const code = `PotentiaBuilder.Variables.set("${NAME}", ${INPUT})`;
         return `${code}\n`;
     })
 
