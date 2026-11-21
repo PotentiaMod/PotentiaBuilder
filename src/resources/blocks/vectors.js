@@ -30,7 +30,7 @@ function register() {
     }, (block) => {
         const X = javascriptGenerator.valueToCode(block, 'X');
         const Y = javascriptGenerator.valueToCode(block, 'Y');
-        const code = `new ExtForge.Vector(${X}, ${Y})`;
+        const code = `new PotentiaBuilder.Vector(${X}, ${Y})`;
         return code;
     })
 
