@@ -109,7 +109,7 @@ javascriptGenerator.valueToCode = function(block, name, order = 0) {
             case 'List':
                 return `((value) => value && value.length ? value : [value])(${code})`
             case 'Vector':
-                return `ExtForge.Vector.from(${code})`
+                return `PotentiaBuilder.Vector.from(${code})`
         }
     }
     return code
