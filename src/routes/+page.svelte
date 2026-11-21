@@ -208,7 +208,7 @@
 </script>
 
 <head>
-  <title>ExtForge</title>
+  <title>PotentiaBuilder</title>
 </head>
 
 <NavigationBar>
