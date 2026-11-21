@@ -150,7 +150,7 @@ function register() {
         const INDEX = javascriptGenerator.valueToCode(block, 'INDEX')
         const INPUT = javascriptGenerator.valueToCode(block, 'INPUT')
         const TEXT = javascriptGenerator.valueToCode(block, 'TEXT')
-        const code = `ExtForge.Utils.setList(${INPUT}, ${INDEX}-1, ${TEXT})`;
+        const code = `PotentiaBuilder.Utils.setList(${INPUT}, ${INDEX}-1, ${TEXT})`;
         return [`${code}`, 0];
     })
     
@@ -258,14 +258,14 @@ function register() {
         const vardepthname = "temp_"+util.randomHex(24)
         const code = 
        `var ${varlistname} = ${LIST};
-        ExtForge.Utils.lists_foreach.depth += 1;
-        var ${vardepthname} = ExtForge.Utils.lists_foreach.depth;
+        PotentiaBuilder.Utils.lists_foreach.depth += 1;
+        var ${vardepthname} = PotentiaBuilder.Utils.lists_foreach.depth;
         for (var ${varindexname} in ${varlistname}) {
-            ExtForge.Utils.lists_foreach.index[${vardepthname}] = ${varindexname};
-            ExtForge.Utils.lists_foreach.value[${vardepthname}] = ${varlistname}[${varindexname}];
+            PotentiaBuilder.Utils.lists_foreach.index[${vardepthname}] = ${varindexname};
+            PotentiaBuilder.Utils.lists_foreach.value[${vardepthname}] = ${varlistname}[${varindexname}];
             ${BLOCKS}
         };
-        ExtForge.Utils.lists_foreach.depth -= 1;
+        PotentiaBuilder.Utils.lists_foreach.depth -= 1;
         `
         return `${code}\n`;
     })
@@ -277,7 +277,7 @@ function register() {
         canDragDuplicate: true,
         colour: categoryColor
     }, (block) => {
-        const code = `ExtForge.Utils.lists_foreach.index[ExtForge.Utils.lists_foreach.depth]`
+        const code = `PotentiaBuilder.Utils.lists_foreach.index[PotentiaBuilder.Utils.lists_foreach.depth]`
         return [`${code}`, 0];
     })
     registerBlock(`${categoryPrefix}foreachvalue`, {
@@ -288,7 +288,7 @@ function register() {
         canDragDuplicate: true,
         colour: categoryColor
     }, (block) => {
-        const code = `ExtForge.Utils.lists_foreach.value[ExtForge.Utils.lists_foreach.depth]`
+        const code = `PotentiaBuilder.Utils.lists_foreach.value[PotentiaBuilder.Utils.lists_foreach.depth]`
         return [`${code}`, 0];
     })
 
