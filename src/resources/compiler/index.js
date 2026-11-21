@@ -7,7 +7,7 @@ if (!Scratch.extensions.unsandboxed) {
     return
 }
 
-const ExtForge = {
+const PotentiaBuilder = {
     Broadcasts: new function() {
         this.raw_ = {};
         this.register = (name, blocks) => {
@@ -37,10 +37,10 @@ const ExtForge = {
         }
 
         static from(v) {
-            if (v instanceof ExtForge.Vector) return v
-            if (v instanceof Array) return new ExtForge.Vector(Number(v[0]), Number(v[1]))
-            if (v instanceof Object) return new ExtForge.Vector(Number(v.x), Number(v.y))
-            return new ExtForge.Vector()
+            if (v instanceof PotentiaBuilder.Vector) return v
+            if (v instanceof Array) return new PotentiaBuilder.Vector(Number(v[0]), Number(v[1]))
+            if (v instanceof Object) return new PotentiaBuilder.Vector(Number(v.x), Number(v.y))
+            return new PotentiaBuilder.Vector()
         }
 
         add(v) {
@@ -81,8 +81,8 @@ class Compiler {
 
         const headerCode = [
             `/*`,
-            `   Created with ExtForge`,
-            `   https://jwklong.github.io/extforge`,
+            `   Created with PotentiaBuilder`,
+            `   https://jwklong.github.io/PotentiaBuilder`,
             `*/`,
             `(async function (Scratch) {`,
             `const variables = {};`,
@@ -98,7 +98,7 @@ class Compiler {
                 `}`,
                 ``,
                 `let extension = new Extension();`,
-                `// code compiled from extforge`
+                `// code compiled from PotentiaBuilder`
             ]
         }
         const footerCode = [
