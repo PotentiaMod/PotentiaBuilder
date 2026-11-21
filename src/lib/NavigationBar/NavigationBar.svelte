@@ -25,7 +25,7 @@
         align-items: center;
         z-index: 100;
 
-        background: linear-gradient(177.5deg, #fca, #faa);
+        background: linear-gradient(177.5deg, #7900CA, #6600AA);
     }
 
     .logo-margin {
