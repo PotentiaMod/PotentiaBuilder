@@ -273,7 +273,7 @@ function register() {
     }, (block) => {
         const NEEDLE = javascriptGenerator.valueToCode(block, 'NEEDLE');
         const HAYSTACK = javascriptGenerator.valueToCode(block, 'HAYSTACK');
-        const code = `ExtForge.Utils.countString(${HAYSTACK}, ${NEEDLE})`;
+        const code = `PotentiaBuilder.Utils.countString(${HAYSTACK}, ${NEEDLE})`;
         return [`${code}`, 0];
     })
 
